@@ -1,8 +1,15 @@
-fastapi==0.115.0
-uvicorn[standard]==0.32.0
-anthropic==0.39.0
-google-generativeai==0.8.3
-supabase==2.9.0
+# Core dependencies with stable versions that have prebuilt wheels
+fastapi==0.109.2
+uvicorn[standard]==0.27.1
 python-dotenv==1.0.1
-pydantic==2.8.2
-pydantic-settings==2.4.0
+
+# LLM providers
+anthropic==0.18.1
+google-generativeai==0.3.2
+
+# Database
+supabase==2.3.4
+
+# Pydantic - use older stable version with prebuilt wheels
+pydantic==2.6.1
+pydantic-settings==2.1.0
