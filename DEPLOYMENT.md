@@ -53,10 +53,14 @@ In Render dashboard, go to your service → Environment:
 
 ```
 LLM_PROVIDER=google
-GOOGLE_API_KEY=YOUR_GOOGLE_API_KEY_HERE
-SUPABASE_URL=YOUR_SUPABASE_URL_HERE
-SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+GOOGLE_API_KEY=your_google_api_key_here
+SUPABASE_URL=your_supabase_project_url_here
+SUPABASE_KEY=your_supabase_anon_key_here
 ```
+
+Get these from:
+- Google API Key: https://aistudio.google.com/apikey
+- Supabase: Your dashboard → Settings → API
 
 Click **"Save Changes"** - it will auto-deploy!
 
