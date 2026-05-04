@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>API Connection Test</title>
+</head>
+<body>
+    <h1>API Connection Test</h1>
+    <button onclick="testAPI()">Test Railway Backend</button>
+    <pre id="result"></pre>
+
+    <script>
+        const API_BASE = 'https://life-tracker-backend-production-44c5.up.railway.app';
+
+        async function testAPI() {
+            const result = document.getElementById('result');
+            result.textContent = 'Testing...\n';
+
+            try {
+                // Test 1: Root endpoint
+                result.textContent += '\n1. Testing root endpoint...\n';
+                const response = await fetch(`${API_BASE}/`);
+                const data = await response.json();
+                result.textContent += `✓ Success: ${JSON.stringify(data)}\n`;
+
+                // Test 2: CORS headers
+                result.textContent += '\n2. Checking CORS headers...\n';
+                result.textContent += `Access-Control-Allow-Origin: ${response.headers.get('access-control-allow-origin') || 'NOT SET'}\n`;
+
+                // Test 3: Capture endpoint
+                result.textContent += '\n3. Testing capture endpoint...\n';
+                const captureResponse = await fetch(`${API_BASE}/capture`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ text: 'test task from debug page' })
+                });
+
+                if (captureResponse.ok) {
+                    const captureData = await captureResponse.json();
+                    result.textContent += `✓ Capture Success: ${JSON.stringify(captureData, null, 2)}\n`;
+                } else {
+                    result.textContent += `✗ Capture Failed: ${captureResponse.status} ${await captureResponse.text()}\n`;
+                }
+
+            } catch (error) {
+                result.textContent += `\n✗ ERROR: ${error.message}\n`;
+                result.textContent += `Stack: ${error.stack}\n`;
+            }
+        }
+    </script>
+</body>
+</html>
