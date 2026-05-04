@@ -1,5 +1,6 @@
-from mangum import Mangum
 from main import app
+from mangum import Mangum
 
-# Mangum wraps FastAPI for serverless (AWS Lambda, Vercel, etc.)
-handler = Mangum(app, lifespan="off")
+# Vercel will call this
+handler = Mangum(app, lifespan="off", api_gateway_base_path="/api")
+

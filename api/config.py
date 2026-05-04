@@ -1,6 +1,7 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from functools import lru_cache
 from typing import Literal
+import os
 
 
 class Settings(BaseSettings):
@@ -10,8 +11,11 @@ class Settings(BaseSettings):
     supabase_key: str
     llm_provider: Literal["anthropic", "google"] = "anthropic"
 
-    class Config:
-        env_file = ".env"
+    model_config = SettingsConfigDict(
+        env_file=os.path.join(os.path.dirname(__file__), ".env"),
+        env_file_encoding='utf-8',
+        extra='ignore'
+    )
 
 
 @lru_cache()
