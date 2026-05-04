@@ -1,7 +1,7 @@
-// Use environment variable or default to localhost for development
+// Use same domain for API (Vercel serverless functions)
 const API_BASE = window.location.hostname === 'localhost'
     ? 'http://localhost:8000'
-    : 'https://life-tracker-backend.onrender.com'; // UPDATE THIS after deploying backend
+    : '/api';
 
 // View management
 const views = ['today', 'week', 'goals', 'bucket'];
