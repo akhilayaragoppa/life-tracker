@@ -4,7 +4,8 @@
       "Bash(git add *)",
       "Bash(git commit -m 'Deploy both frontend and backend on Vercel *)",
       "Bash(git push *)",
-      "Bash(git commit -m 'Fix Vercel serverless function configuration *)"
+      "Bash(git commit -m 'Fix Vercel serverless function configuration *)",
+      "Bash(git commit *)"
     ]
   }
 }
