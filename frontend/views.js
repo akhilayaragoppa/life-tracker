@@ -1,7 +1,7 @@
 // Use Railway backend (much faster and more reliable than serverless)
 const API_BASE = window.location.hostname === 'localhost'
     ? 'http://localhost:8000'
-    : 'https://life-tracker-backend.up.railway.app'; // UPDATE with your Railway URL
+    : 'https://life-tracker-backend-production-44c5.up.railway.app'; // UPDATE with your Railway URL
 
 // View management
 const views = ['today', 'week', 'goals', 'bucket'];
