@@ -1,5 +1,5 @@
-# Vercel serverless function entry point
+from mangum import Mangum
 from main import app
 
-# This is what Vercel will call
-handler = app
+# Mangum wraps FastAPI for serverless (AWS Lambda, Vercel, etc.)
+handler = Mangum(app, lifespan="off")
