@@ -1,15 +1,19 @@
-# Core dependencies with stable versions that have prebuilt wheels
-fastapi==0.109.2
-uvicorn[standard]==0.27.1
-python-dotenv==1.0.1
+# Use latest versions with Python 3.14 wheel support
+fastapi>=0.100.0
+uvicorn[standard]>=0.27.0
+python-dotenv>=1.0.0
 
-# LLM providers
-anthropic==0.18.1
-google-generativeai==0.3.2
+# LLM providers - latest versions
+anthropic>=0.20.0
+google-generativeai>=0.8.0
 
 # Database
-supabase==2.3.4
+supabase>=2.9.0
 
-# Pydantic - use older stable version with prebuilt wheels
-pydantic==2.6.1
-pydantic-settings==2.1.0
+# Pydantic - use versions with Python 3.14 wheels
+pydantic>=2.10.0
+pydantic-settings>=2.6.0
+
+# Additional dependencies that may be needed
+httpx>=0.27.0
+anyio>=4.0.0
